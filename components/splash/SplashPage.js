@@ -16,6 +16,12 @@ export default class SplashPage extends Component {
     this.navigateBack = this.navigateBack.bind(this);
   }
 
+  componentWillMount() {
+    setTimeout(() => {
+      this.props.navigator.push(this.props.routeStack[1]);
+    },2000);
+  }
+
   navigate() {
     this.props.navigator.push(this.props.routeStack[1]);
   }
@@ -38,13 +44,16 @@ export default class SplashPage extends Component {
               accessibilityLabel="Learn more about this purple button"
             />
           }
-          <Button
-            style={styles.nextButton}
-            onPress={this.navigate}
-            title="Next Page"
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
+          {
+            this.props.route.index>=0 &&
+            <Button
+              style={styles.nextButton}
+              onPress={this.navigate}
+              title="Next Page"
+              color="#841584"
+              accessibilityLabel="Learn more about this purple button"
+            />
+          }
         </View>
         <Text style={styles.welcome}>
           {this.props.route.title} - ({this.props.route.index})

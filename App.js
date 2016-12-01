@@ -74,7 +74,7 @@ export default class App extends Component {
         return (
           <NotFound navigator={navigator} route={route} routeStack={routes} />
         );
-    };
+    }
   }
 }
 
