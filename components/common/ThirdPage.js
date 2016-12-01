@@ -8,7 +8,7 @@ import {
   Button
 } from 'react-native';
 
-export default class SplashPage extends Component {
+export default class ThirdPage extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -17,7 +17,7 @@ export default class SplashPage extends Component {
   }
 
   navigate() {
-    this.props.navigator.push(this.props.routeStack[1]);
+    this.props.navigator.push(this.props.routeStack[4]);
   }
 
   navigateBack() {
@@ -38,6 +38,8 @@ export default class SplashPage extends Component {
               accessibilityLabel="Learn more about this purple button"
             />
           }
+          {
+          this.props.routeStack.length-1 <= this.props.route.index &&
           <Button
             style={styles.nextButton}
             onPress={this.navigate}
@@ -45,6 +47,7 @@ export default class SplashPage extends Component {
             color="#841584"
             accessibilityLabel="Learn more about this purple button"
           />
+          }
         </View>
         <Text style={styles.welcome}>
           {this.props.route.title} - ({this.props.route.index})

@@ -8,7 +8,7 @@ import {
   Button
 } from 'react-native';
 
-export default class SplashPage extends Component {
+export default class NotFound extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -17,7 +17,7 @@ export default class SplashPage extends Component {
   }
 
   navigate() {
-    this.props.navigator.push(this.props.routeStack[1]);
+    this.props.navigator.push(this.props.routeStack[2]);
   }
 
   navigateBack() {

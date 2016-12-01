@@ -9,21 +9,24 @@ import {
 import configureStore from './store/configureStore';
 import MainPage from './components/home/MainPage';
 import SplashPage from './components/splash/SplashPage';
+import FirstPage from './components/common/FirstPage';
+import SecondPage from './components/common/SecondPage';
+import ThirdPage from './components/common/ThirdPage';
+import NotFound from './components/common/NotFound';
+
+const routes = [
+  {title: 'Splash Screen', index: -1},
+  {title: 'Main Page', index: 0},
+  {title: 'First Page', index: 1},
+  {title: 'Second Page', index: 2},
+  {title: 'Third Page', index: 3}
+];
 
 export default class App extends Component {
   render() {
-    const routes = [
-      {title: 'Splash Screen', index: -1},
-      // {title: 'Main Page', index: 0},
-      // {title: 'First Page', index: 1},
-      // {title: 'Second Page', index: 2},
-      // {title: 'Third Page', index: 3}
-    ];
-
     return (
       <Navigator
         initialRoute={routes[0]}
-        initialRouteStack={routes}
         renderScene={this.renderScene.bind(this)}
         configureScene={(route) =>
           {
@@ -44,27 +47,32 @@ export default class App extends Component {
     switch(routeId) {
       case -1:
         return (
-          <SplashPage navigator={navigator} routeId={route.id}/>
+          <SplashPage navigator={navigator} route={route} routeStack={routes}/>
         );
 
       case 0:
         return (
-          <MainPage navigator={navigator} routeId={route.id}/>
+          <MainPage navigator={navigator} route={route} routeStack={routes} />
         );
 
       case 1:
         return (
-          <SplashPage navigator={navigator} routeId={route.id}/>
+          <FirstPage navigator={navigator} route={route} routeStack={routes} />
         );
 
       case 2:
         return (
-          <SplashPage navigator={navigator} routeId={route.id}/>
+          <SecondPage navigator={navigator} route={route} routeStack={routes} />
         );
 
       case 3:
         return (
-          <SplashPage navigator={navigator} routeId={route.id}/>
+          <ThirdPage navigator={navigator} route={route} routeStack={routes} />
+        );
+
+      default:
+        return (
+          <NotFound navigator={navigator} route={route} routeStack={routes} />
         );
     };
   }

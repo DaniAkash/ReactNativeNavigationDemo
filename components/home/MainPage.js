@@ -13,23 +13,41 @@ export default class MainPage extends Component {
     super(props, context);
 
     this.navigate = this.navigate.bind(this);
+    this.navigateBack = this.navigateBack.bind(this);
   }
 
   navigate() {
-    this.props.navigator.replace({id: 'splash'});
+    this.props.navigator.push(this.props.routeStack[2]);
   }
 
-  render (){
+  navigateBack() {
+    this.props.navigator.pop();
+  }
+
+  render () {
     return (
       <View style={styles.container}>
-        <Button
-          onPress={this.navigate}
-          title="Learn More"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
+        <View style={styles.navButtons}>
+          {
+            this.props.route.index>0 &&
+            <Button
+              style={styles.backButton}
+              onPress={this.navigateBack}
+              title="<-"
+              color="#841584"
+              accessibilityLabel="Learn more about this purple button"
+            />
+          }
+          <Button
+            style={styles.nextButton}
+            onPress={this.navigate}
+            title="Next Page"
+            color="#841584"
+            accessibilityLabel="Learn more about this purple button"
+          />
+        </View>
         <Text style={styles.welcome}>
-          MainPage - {this.props.routeId}
+          {this.props.route.title} - ({this.props.route.index})
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
@@ -50,6 +68,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
+  navButtons: {
+    flexDirection: 'row'
+  },
+  backButton: {},
+  nextButton: {},
   welcome: {
     fontSize: 20,
     textAlign: 'center',
