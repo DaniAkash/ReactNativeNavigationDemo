@@ -50,11 +50,10 @@ export default class MainPage extends Component {
           {this.props.route.title} - ({this.props.route.index})
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+          No Back for the Main Page
         </Text>
         <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          Click back to exit the app!
         </Text>
       </View>
     );

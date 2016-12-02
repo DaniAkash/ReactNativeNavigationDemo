@@ -50,11 +50,11 @@ export default class SecondPage extends Component {
           {this.props.route.title} - ({this.props.route.index})
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+          Second Page in the navigation
         </Text>
         <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          Press either back/next button {'\n'}
+          To navigate away from this page
         </Text>
       </View>
     );

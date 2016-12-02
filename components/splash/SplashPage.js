@@ -59,11 +59,11 @@ export default class SplashPage extends Component {
           {this.props.route.title} - ({this.props.route.index})
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+          This is the Splash Page!
         </Text>
         <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          You can see this page only{'\n'}
+          on beginning of the app!
         </Text>
       </View>
     );
