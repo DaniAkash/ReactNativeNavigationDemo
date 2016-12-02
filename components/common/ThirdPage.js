@@ -16,7 +16,7 @@ export default class ThirdPage extends Component {
     this.navigateBack = this.navigateBack.bind(this);
   }
 
-  navigate() {
+  navigate() { // This function not needed in the last page
     this.props.navigator.push(this.props.routeStack[4]);
   }
 

@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Navigator,
   Text,
-  View
+  View,
+  BackAndroid
 } from 'react-native';
 import configureStore from './store/configureStore';
 import MainPage from './components/home/MainPage';
@@ -21,6 +22,15 @@ const routes = [
   {title: 'Second Page', index: 2},
   {title: 'Third Page', index: 3}
 ];
+var _navigator, _route;
+
+BackAndroid.addEventListener('hardwareBackPress', () => {
+  if(_route.index>0) {
+    _navigator.pop();
+    return true;
+  }
+  return false;
+});
 
 export default class App extends Component {
   render() {
@@ -42,6 +52,8 @@ export default class App extends Component {
   }
 
   renderScene(route, navigator){
+    _navigator = navigator;
+    _route = route;
     let routeId = route.index;
 
     switch(routeId) {
