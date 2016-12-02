@@ -7,7 +7,6 @@ import {
   View,
   BackAndroid
 } from 'react-native';
-import configureStore from './store/configureStore';
 import MainPage from './components/home/MainPage';
 import SplashPage from './components/splash/SplashPage';
 import FirstPage from './components/common/FirstPage';
