@@ -7,20 +7,15 @@ import {
   View,
   BackAndroid
 } from 'react-native';
-import MainPage from './components/home/MainPage';
+
+import HomePage from './components/home/HomePage';
 import SplashPage from './components/splash/SplashPage';
 import FirstPage from './components/common/FirstPage';
 import SecondPage from './components/common/SecondPage';
 import ThirdPage from './components/common/ThirdPage';
 import NotFound from './components/common/NotFound';
+import routes from './routes';
 
-const routes = [
-  {title: 'Splash Screen', index: -1},
-  {title: 'Main Page', index: 0},
-  {title: 'First Page', index: 1},
-  {title: 'Second Page', index: 2},
-  {title: 'Third Page', index: 3}
-];
 var _navigator, _route;
 
 BackAndroid.addEventListener('hardwareBackPress', () => {
@@ -63,7 +58,7 @@ export default class App extends Component {
 
       case 0:
         return (
-          <MainPage navigator={navigator} route={route} routeStack={routes} />
+          <HomePage navigator={navigator} route={route} routeStack={routes} />
         );
 
       case 1:

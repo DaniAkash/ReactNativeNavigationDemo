@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import styles from '../../styles/styles';
 
-export default class MainPage extends Component {
+export default class HomePage extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -50,7 +50,7 @@ export default class MainPage extends Component {
           {this.props.route.title} - ({this.props.route.index})
         </Text>
         <Text style={styles.instructions}>
-          No Back for the Main Page
+          No Back for the Home Page
         </Text>
         <Text style={styles.instructions}>
           Click back to exit the app!
