@@ -34,10 +34,15 @@ export default class App extends Component {
         renderScene={this.renderScene.bind(this)}
         configureScene={(route) =>
           {
-            if (route.sceneConfig)
-            {
-              return route.sceneConfig;
-            }
+            if(route.title === "Home Page")
+              return {
+                ...Navigator.SceneConfigs.FloatFromRight,
+                gestures: {}
+              }
+
+            if(route.title === "First Page")
+              return Navigator.SceneConfigs.FloatFromBottom;
+
             return Navigator.SceneConfigs.FloatFromRight;
           }
         }

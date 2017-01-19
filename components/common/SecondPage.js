@@ -55,6 +55,7 @@ export default class SecondPage extends Component {
         </Text>
         <Text style={styles.instructions}>
           Press either back/next button {'\n'}
+          Or Swipe right from the left {'\n'}
           To navigate away from this page
         </Text>
       </View>

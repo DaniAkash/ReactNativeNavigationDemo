@@ -58,6 +58,7 @@ export default class ThirdPage extends Component {
         </Text>
         <Text style={styles.instructions}>
           Press back button {'\n'}
+          Or Swipe right from the left {'\n'}
           To navigate away from this page
         </Text>
       </View>

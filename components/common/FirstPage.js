@@ -55,6 +55,7 @@ export default class FirstPage extends Component {
         </Text>
         <Text style={styles.instructions}>
           Press either back/next button {'\n'}
+          Or Swipe down from the top {'\n'}
           To navigate away from this page
         </Text>
       </View>
