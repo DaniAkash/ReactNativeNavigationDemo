@@ -13,12 +13,25 @@ export default class SecondPage extends Component {
   constructor(props, context) {
     super(props, context);
 
+    this.state = {
+      message: "hello"
+    };
     this.navigate = this.navigate.bind(this);
+    this.navigateAndSendMessage = this.navigateAndSendMessage.bind(this);
     this.navigateBack = this.navigateBack.bind(this);
   }
 
   navigate() {
     this.props.navigator.push(this.props.routeStack[4]);
+  }
+
+  navigateAndSendMessage() {
+    let newRoute = Object.assign(
+      {},
+      this.props.routeStack[4]
+    );
+    newRoute.data = this.state.message;
+    this.props.navigator.push(newRoute);
   }
 
   navigateBack() {
@@ -56,8 +69,16 @@ export default class SecondPage extends Component {
         <Text style={styles.instructions}>
           Press either back/next button {'\n'}
           Or Swipe right from the left {'\n'}
-          To navigate away from this page
+          To navigate away from this page {'\n\n\n'}
+          Press the below button to send a message to Third Page
         </Text>
+        <Button
+          style={[styles.nextButton, {marginTop: 25}]}
+          onPress={this.navigateAndSendMessage}
+          title="Send Message"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
       </View>
     );
   }

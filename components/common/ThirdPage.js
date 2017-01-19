@@ -60,6 +60,13 @@ export default class ThirdPage extends Component {
           Press back button {'\n'}
           Or Swipe right from the left {'\n'}
           To navigate away from this page
+          {
+            (this.props.route.data)
+            ?
+              `\n\nMessage from Second Page - "${this.props.route.data}"`
+            :
+              ``
+          }
         </Text>
       </View>
     );

@@ -14,11 +14,16 @@ export default class FirstPage extends Component {
     super(props, context);
 
     this.navigate = this.navigate.bind(this);
+    this.navigateToThird = this.navigateToThird.bind(this);
     this.navigateBack = this.navigateBack.bind(this);
   }
 
   navigate() {
     this.props.navigator.push(this.props.routeStack[3]);
+  }
+
+  navigateToThird() {
+    this.props.navigator.push(this.props.routeStack[4]);
   }
 
   navigateBack() {
@@ -56,8 +61,16 @@ export default class FirstPage extends Component {
         <Text style={styles.instructions}>
           Press either back/next button {'\n'}
           Or Swipe down from the top {'\n'}
-          To navigate away from this page
+          To navigate away from this page {'\n\n\n'}
+          Press the below button to navigate to Third Page
         </Text>
+        <Button
+          style={[styles.nextButton, {marginTop: 25}]}
+          onPress={this.navigateToThird}
+          title="Third Page"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
       </View>
     );
   }
