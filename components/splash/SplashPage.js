@@ -19,7 +19,7 @@ export default class SplashPage extends Component {
 
   componentWillMount() {
     setTimeout(() => {
-      this.props.navigator.push(this.props.routeStack[1]);
+      this.props.navigator.replaceWithAnimation(this.props.routeStack[1]);
     },2000);
   }
 
