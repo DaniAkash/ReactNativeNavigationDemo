@@ -10,7 +10,7 @@ This is a simple react native application built for explaining practical usage o
   - Handling Swipe gesture to move back to previous screens.
   - Handling Back button in Android using [`BackAndroid`][backandroid] component.
 
-> This app was used as the Demo app for my "Navigation in React Native" talk in [React Native Chennai - Introduction to React Native][routes] meetup
+> This app was used as the Demo app for my "Navigation in React Native" talk in [React Native Chennai - Introduction to React Native][meetup] meetup
 
 License
 ----
